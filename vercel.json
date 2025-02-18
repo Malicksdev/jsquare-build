@@ -1,9 +1,4 @@
 {
-    "public": true,
-    "rewrites": [
-      {
-        "source": "/explore",
-        "destination": "/explore.html"
+        "public": true
       }
-    ]
-  }
+      
