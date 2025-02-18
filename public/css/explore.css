@@ -1,0 +1,239 @@
+@font-face {
+  font-family: 'degular'; /* Replace with your font name */
+  src: url('../../assets/fonts/Degular/Degular-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'degular-display'; /* Replace with your font name */
+  src: url('../../assets/fonts/DegularDisplay/DegularDisplay-Semibold.otf') format(opentype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  transition: background-color 0.8s ease-in-out;
+}
+
+/* Fixed Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+  z-index: 100;
+}
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(46, 46, 46);
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+  font-weight: 500;
+  font-family: 'degular-display', sans-serif;
+  font-size: 26px;
+  line-height: 41px;
+  font-style: normal;
+  transition: color 0.3s ease;
+}
+header nav ul li a:hover {
+  color: #ffffff;
+  
+}
+
+/* Main Content */
+main {
+  padding-top: 80px; /* Space for fixed header */
+}
+
+/* Section Container (Two-Column Layout) */
+.section-container {
+  display: grid;
+  grid-template-columns: 33% 68%;
+  gap: 20px;
+  padding: 40px;
+  margin-left: 40px  ;
+  margin-right: 40px;
+}
+
+/* Sticky Section Title */
+.section-title {
+  position: sticky;
+  top: 80px; /* Adjust if header height changes */
+  align-self: start;
+}
+.section-title h2 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: rgb(46, 46, 46);
+}
+
+/* Section Content */
+.section-content {
+  color: rgb(32, 32, 32);
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* Paragraph Container for Text & Animation */
+.paragraph-container {
+  background-color: #f7f7f7; /* This will be overridden by JS on active sections */
+  /* padding: 20px; */
+  padding: 2.2rem 3.4rem;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: 175px;
+  /* border-radius: 8px; */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+  transition: background-color 0.8s ease-in-out;
+  min-height: 500px; /* Increased minimum height */
+}
+
+
+/* Two-Column Layout within Paragraph Container */
+.container-row {
+  display: flex;
+  flex-direction: row;
+  gap: 40%;
+  padding-left: 40px;
+  padding-right: 20px;
+}
+.text-column {
+  flex: 2;
+}
+.animation-column {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.animation-placeholder {
+  width: 110%;
+  height: 250px; /* Adjust based on your animation needs */
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 4px;
+  margin-top: 110%;
+  
+}
+
+.portfolio-wrapper {
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh; /* Ensures enough vertical space for the pin effect */
+}
+
+/* Portfolio Gallery for Horizontal Scrolling */
+.portfolio-gallery {
+  display: flex;
+  gap: 20px;
+  scroll-behavior: smooth;
+  margin-top: 15%;
+}
+
+.portfolio-gallery img {
+  height: 35rem; /* Bigger images */
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* Hide scrollbar in WebKit browsers */
+.portfolio-gallery::-webkit-scrollbar {
+display: none;
+}
+
+/* Hide scrollbar in Firefox and IE */
+.portfolio-gallery {
+-ms-overflow-style: none; /* IE and Edge */
+scrollbar-width: none; /* Firefox */
+}
+
+.portfolio-gallery img {
+height: 35rem; /* Increase height */
+object-fit: cover;
+border-radius: 8px;
+flex-shrink: 0; /* Prevent images from shrinking */
+}
+
+
+
+#about {
+  margin-bottom: 160px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#services {
+  margin-bottom: 160px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#skills {
+  margin-bottom: 160px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#portfolio {
+  margin-bottom: 160px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.contact-us{
+  opacity: 0;
+}
+
+.contact-us-button{
+  margin-left: 50%;
+  padding: 1rem 2rem;
+  background: #1f4c76;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  align-content: center;
+}
+
+p{
+  font-family: 'degular', sans-serif;
+}
+
+strong{
+  font-family: 'degular-display', sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 50px;
+  color: rgb(51, 51, 51);
+}
+
+h2{
+  font-family: 'degular-display', sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 50px;
+  color: rgb(51, 51, 51);
+  margin-bottom: 50px;
+}

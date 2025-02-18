@@ -1,0 +1,265 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #080a13;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Three.js Canvas */
+.three-container {
+  z-index: -1; /* Maintain 3D scene between background and content */
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.cube-icon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.contact-btn {
+  /* background: #f7e733; */
+  color: black;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  z-index: -1;
+  mix-blend-mode: lighten;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Add depth effect to text */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0vh; /* Push main title down from top */
+  margin-top: -6vh;
+  
+}
+
+.hero-subtext {
+  position: absolute;
+  bottom: 10%; /* Position from bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  margin-top: auto; /* Push to very bottom */
+}
+
+.explore-button{
+  position: absolute;
+  z-index: 5;
+  bottom: 2%;
+  padding: 7px;
+  border-radius: 5px;
+  border-color: #faf9f3;
+  font-size: 15px;
+  color: #faf9f3;
+  background: inherit;
+}
+
+.hero h1 {
+  
+  text-shadow: 0 0 30px rgba(247, 231, 51, 0.2);
+}
+
+/* Prevent text selection on hero text */
+.hero h1,
+.hero p {
+  -webkit-user-select: none; /* Chrome, Safari, Opera */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE 10+ */
+  user-select: none;         /* Standard syntax */
+}
+
+.hero h1 .letter {
+  display: inline-block;
+  transform: translateY(30px) scale(1.4);
+  opacity: 0;
+  text-shadow: 0 0 10px rgba(247, 231, 51, 0.3);
+}
+
+/* Create depth illusion */
+.hero::before {
+  opacity: 0; /* Start hidden */
+  transition: opacity 1s ease;
+  /* content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at center, 
+    rgba(120, 145, 12, 0.017) 0%,
+    rgba(13, 15, 24, 0) 70%);
+  pointer-events: none; */
+}
+
+h1 {
+  font-size: 170px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+p {
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+
+.stats-container {
+  position: fixed;
+  top: 60%;
+  right: 5vw;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+.stat-item {
+  text-align: right;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  color: #faf9f3;
+  transition: color 0.3s ease;
+  overflow: hidden;
+    display: inline-block;
+    min-width: 80px;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+}
+
+
+/* Clients Logos */
+.clients {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+}
+
+.clients img {
+  height: 30px;
+  opacity: 0.6;
+}
+
+
+/* Floating Cards */
+.floating-cards {
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background: rgba(26, 26, 46, 0.6);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); 
+}
+
+section {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
