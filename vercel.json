@@ -2,8 +2,8 @@
     "public": true,
     "rewrites": [
       {
-        "source": "/explore",
-        "destination": "/explore.html"
+        "source": "//(.*)",
+        "destination": "/index.html"
       }
     ]
   }
